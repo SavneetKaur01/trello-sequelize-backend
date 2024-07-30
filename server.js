@@ -1,6 +1,6 @@
 const express = require("express");
 const cors = require("cors");
-
+const initializeModels = require("./models/initModels.js");
 const app = express();
 
 // var corsOptions = {
@@ -14,8 +14,6 @@ app.use(express.json());
 
 // parse requests of content-type - application/x-www-form-urlencoded
 app.use(express.urlencoded({ extended: true }));
-
-
 
 app.get("/", (req, res) => {
   res.json({ message: "Landing Page" });
@@ -35,4 +33,10 @@ app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}.`);
 });
 
+async function startApp() {
+  // await testConnection();
+  await initializeModels();
+}
+
+startApp();
 

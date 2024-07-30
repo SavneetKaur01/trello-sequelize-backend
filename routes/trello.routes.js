@@ -46,7 +46,7 @@ module.exports = app => {
     router.post("/checklist/:cardId",checklist.createChecklist);
 
     //Delete a checklist
-    router.delete("/checklist/:checklistID",checklist.deleteCheckList);
+    router.delete("/checklist/:checklistId",checklist.deleteCheckList);
 
     //Get all checkitems
     router.get("/checkitem/:checklistId", checkitem.getAllCheckItems);
