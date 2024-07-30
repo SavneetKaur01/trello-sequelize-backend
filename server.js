@@ -4,7 +4,7 @@ const initializeModels = require("./models/initModels.js");
 const app = express();
 
 var corsOptions = {
-  origin: 'http://localhost:5173',
+  origin: ['http://localhost:5173','https://trello-frontend-react.vercel.app/'],
   credentials:true,            
   optionSuccessStatus:200
 };
