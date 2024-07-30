@@ -3,11 +3,13 @@ const cors = require("cors");
 const initializeModels = require("./models/initModels.js");
 const app = express();
 
-// var corsOptions = {
-//   origin: "http://localhost:8081"
-// };
+var corsOptions = {
+  origin: 'http://localhost:5173',
+  credentials:true,            
+  optionSuccessStatus:200
+};
 
-app.use(cors());
+app.use(cors(corsOptions));
 
 // parse requests of content-type - application/json
 app.use(express.json());
